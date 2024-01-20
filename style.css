@@ -13,7 +13,7 @@ html,body{
     place-items: center;
 }
 body{
-    background-image: url(./653.jpg);
+    background-image: url('loginBgImage.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
