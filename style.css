@@ -1,98 +1,193 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:wght@300;400&display=swap');
 
-*{
+:root {
+    --bg-color: white;
+    --btn-color: black;
+    --label-color: white;
+    --link-color: pink;
+
+}
+
+*,
+*::before,
+::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Libre Baskerville', serif;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
-html,body{
-    display: flexbox;
-    height: 100%;
-    place-items: center;
-}
-body{
-    background-image: url(./pexels-kévin-dorg-2881262.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}
-.wrapper{
-   position: absolute;
-   top: 25%;
-   left: 37%;
-   width: 400px;
-   background-color: rgb(255, 255, 255);
-   border-radius: 16px;
-   border: 1px solid deeppink;
-   box-shadow: 15px 15px 100px rgb(244, 7, 173);
-}
-.wrapper .title{
-    font-size: 38px;
-    color: whitesmoke;
-    font-weight: 900;
-    text-align: center;
-    line-height: 100px;
-    background: linear-gradient(-135deg,rgb(233, 47, 208),rgb(225, 210, 210));
-    border-radius: 15px 15px 0px 0px;
-}
-.wrapper form{
-    padding: 40px 10px 40px 10px;
-}
-.wrapper form .field{
-    position: relative;
-    height: 40px;
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin-top: 20px;
+    height: 100vh;
+    background-image: url('./653.jpg');
 }
-.wrapper form .field input{
-    width: 100%;
-    height: 100%;
-    font-size: larger;
-    padding-left: 20px;
-    border-radius: 25px;
-    border-color: black;
-    transition: all 0.4s ease;
-}
-.wrapper form .field input:focus{
-    border-color: rgb(225, 63, 150);
-}
-.wrapper form .field label{
-    position: absolute;
-    top: 20%;
-    left: 10px;
-}
-.wrapper form .field input:focus ~ label,
-.wrapper form .field input:valid ~ label{
-    top: 0;
-    bottom: 20%;
-    color: rgb(0, 0, 0);
-    transform: translateY(-50%);
-    transition: all 0.4s ease;
-    font-size: smaller;
-}
-.wrapper form .pass-link{
-    margin: 3% 0 0 1%;
-}
-.wrapper form .pass-link a{
+
+a {
     text-decoration: none;
-    color: rgb(93, 72, 231);
+    color: var(--link-color);
 }
-.wrapper form .pass-link a:hover{
-    text-decoration: underline;
-    color: rgb(6, 6, 6);
+
+.wrapper {
+    width: 100%;
+    padding: 0.75rem 0.35rem;
 }
-.wrapper form .field input[type="submit"]{
-    background: linear-gradient(-135deg,rgb(233, 47, 208),rgb(225, 210, 210));
-    font-size: 25px;
-    font-weight: 500;
-    border: none;
-    padding: 0;
+
+.wrapper .title {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+label{
+    color: var(--label-color);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    position: relative;
+    width: 100%;
+    border: 1px solid var(--bg-color);
+    border-radius: 0.25rem;
+    background-color: var(--bg-color);
+    padding: 0.75rem 1rem;
+}
+
+input:focus,
+input:hover {
+    outline-color: blueviolet;
+    border-color: blueviolet;
+}
+
+input[type="button"],
+input[type="submit"] {
     cursor: pointer;
-    transition: all 0.2s ease;
+    color: white;
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
 }
-.wrapper form .field input[type="submit"]:active{
-    transform: scale(.80);
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-6 {
+    height: 1.5rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+/**
+** Show Password
+**/
+.password-eye {
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    left: auto;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.password-eye svg {
+    color: black;
+}
+
+.forgot-password {
+    --link-color: white;
+    color: var(--link-color);
+}
+
+.container{
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px
+  }
+
+  .wrapper {
+    max-width: 25rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px
+  }
+
+  .wrapper {
+    max-width: 32rem;
+  }
+
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px
+  }
 }
