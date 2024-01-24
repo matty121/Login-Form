@@ -74,6 +74,8 @@ body{
     font-size: smaller;
 }
 .wrapper form .pass-link{
+    display: flex;
+    justify-content: space-between;
     margin: 3% 0 0 1%;
 }
 .wrapper form .pass-link a{
